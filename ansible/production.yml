@@ -1,0 +1,9 @@
+---
+- hosts: slave
+  become: true
+  become_user: root
+  roles:
+  - git
+  - chromium
+  - chromedriver
+  - docker
