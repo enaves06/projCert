@@ -1,0 +1,9 @@
+---
+- hosts: slave
+  become: true
+  become_user: root
+  remote_user: edureka
+  roles:
+  - build_website_image
+  vars:
+    ansible_become_password: edureka

@@ -1,0 +1,8 @@
+---
+- name: build container image for website
+  docker_image:
+    name: website:latest
+    build:
+      path: /project/website/Dockerfile
+      source: build
+    state: present
