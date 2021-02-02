@@ -25,6 +25,15 @@ pipeline {
             steps {
                 build job: 'website_testing'
             }
+            
+            post{
+                failure {
+                    build job: 'undeploy_website'
+                }
+                unstable {
+                    build job: 'undeploy_website'
+                }
+            }            
         }
     }
 }
