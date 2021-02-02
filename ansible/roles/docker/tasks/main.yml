@@ -3,6 +3,7 @@
   apt:
     update_cache: "yes"
     force_apt_get: "yes"
+    become: true
 
 - name: Install packages needed for Docker
   apt:
@@ -28,6 +29,7 @@
   apt:
     update_cache: "yes"
     force_apt_get: "yes"
+    become: true
 
 - name: Install Docker
   apt:
