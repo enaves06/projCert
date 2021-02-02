@@ -1,0 +1,6 @@
+---
+- name: Stop website container
+  shell: "docker stop $(docker ps -q --filter ancestor=website)"
+
+- name: Remove website container
+  shell: "docker container rm $(docker ps -a -q --filter ancestor=website)"
