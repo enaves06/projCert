@@ -5,11 +5,6 @@
     state: present
     force_apt_get: "yes"
 
-- name: Add Docker GPG apt Key
-  apt_key:
-    url: https://download.docker.com/linux/ubuntu/gpg
-    state: present
-
 - name: Save the current Ubuntu release version into a variable
   shell: lsb_release -cs
   register: ubuntu_version
