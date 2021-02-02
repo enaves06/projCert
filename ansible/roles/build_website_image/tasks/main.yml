@@ -1,8 +1,8 @@
 ---
 - name: build container image for website
-  docker_image:
-    name: website:latest
-    build:
-      path: /project/website/Dockerfile
-      source: build
-    state: present
+  shell: "cd /project/website && docker build -t website:latest ."
+  register: build_image_output
+
+- name: Show output of website
+  debug:
+    msg: "Container Output: {{build_image_output.stdout}}"
