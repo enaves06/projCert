@@ -1,0 +1,27 @@
+---
+- name: Upload the private key used for Github cloning
+  copy: src=/home/edureka/Desktop/CICD/projCert/keys dest=/edureka/.ssh/github
+
+- name: Correct SSH deploy key permissions
+  file: dest=/edureka/.ssh/github/keys mode=0600
+
+- name: Creates directory
+  file:
+    path: /project/website
+    state: directory
+    owner: edureka
+    group: edureka
+    mode: 0777
+    recurse: yes
+
+# See: https://stackoverflow.com/a/37096534/100134
+- name: Ensure setfacl support is present.
+  package: name=acl
+
+- name: Deploy site files from Github repository
+  git:
+    repo: https://github.com/enaves06/projCert.git
+    dest: /project/website
+    key_file: /edureka/.ssh/github/keys/id_ed25519
+    accept_hostkey: yes
+    force: yes
