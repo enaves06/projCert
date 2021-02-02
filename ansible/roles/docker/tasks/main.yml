@@ -51,7 +51,3 @@
     dest: "/usr/local/bin/ctop"
     mode: 0755
 
-- name: Reboot server in order for changes to take place
-  shell: "sleep 1 && reboot"
-  async: 1
-  poll: 0
