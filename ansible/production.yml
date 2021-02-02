@@ -7,3 +7,5 @@
   - chromium
   - chromedriver
   - docker
+  vars:
+    ansible_become_password: edureka
