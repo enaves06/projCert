@@ -14,7 +14,7 @@ public class AboutUs {
 	  
   	System.setProperty("webdriver.chrome.driver","/usr/bin/chromedriver");
 	 ChromeOptions chromeOptions = new ChromeOptions();	  
-	 ChromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
+	 chromeOptions.addArguments("--headless", "window-size=1024,768", "--no-sandbox");
 	 WebDriver driver = new ChromeDriver(chromeOptions);
 
 	 System.out.println("Running test for index.php");
