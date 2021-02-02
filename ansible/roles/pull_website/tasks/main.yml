@@ -3,7 +3,7 @@
   copy: src=/home/edureka/Desktop/CICD/projCert/keys dest=/edureka/.ssh/github
 
 - name: Correct SSH deploy key permissions
-  file: dest=/edureka/.ssh/github/keys mode=0600
+  file: dest=/edureka/.ssh/github/keys mode=0777
 
 - name: Creates directory
   file:
