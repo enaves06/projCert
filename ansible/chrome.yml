@@ -4,10 +4,6 @@
   become_user: root
   remote_user: edureka
   roles:
-  - git
-  - chromium
-  - chromedriver
-  - docker
   - chrome
   vars:
     ansible_become_password: edureka

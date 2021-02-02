@@ -1,8 +1,16 @@
 ---
-- name: build container image for website
+- name: Build container image for website
   shell: "cd /project/website && docker build -t website:latest ."
   register: build_image_output
 
 - name: Show output of website
   debug:
     msg: "Container Output: {{build_image_output.stdout}}"
+
+- name: Start website
+  shell: "docker run -d -p 8081:80 website"
+  register: container_forward
+
+- name: Forward website
+  debug:
+    msg: "Container Output: {{container_forward.stdout}}"
