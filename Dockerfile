@@ -24,7 +24,7 @@ WORKDIR /var/www/html
 #  echo -e "StrictHostKeyChecking no" >> /etc/ssh/ssh_config && \  
 #  git clone https://github.com/enaves06/projCert.git
 
-COPY /projCert/website /var/www/html
+COPY ./website /var/www/html
 
 #ENTRYPOINT ["/usr/sbin/apache2", "-k", "start"]
 
