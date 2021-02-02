@@ -1,7 +1,8 @@
 ---
 - hosts: slave
   become: true
-  become_user: root
+  become_user: edureka
+  remote_user: edureka
   roles:
   - git
   - chromium

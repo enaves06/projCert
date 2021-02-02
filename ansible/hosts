@@ -1,2 +1,2 @@
 [app]
-slave
+slave ansible_ssh_pass=edureka ansible_ssh_user=edureka
